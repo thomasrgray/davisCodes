@@ -1,0 +1,6 @@
+Onset	Time	Duration	Stimulus
+5	10	1	Taste
+15	10	1	Olfactory
+25	10	1	Taste
+35	10	1	Olfactory
+45	10	1	Taste
