@@ -8,6 +8,7 @@ Created on Wed Mar 20 01:25:51 2024
 """
 
 import os
+import re
 import fileinput
 
 # Define the folder path containing the text files
@@ -23,7 +24,9 @@ for filename in os.listdir(folder_path):
         # Read the file and replace '0.01m' with '0'
         with fileinput.FileInput(file_path, inplace=True) as file:
             for line in file:
-                print(line.replace('0.01m', '0'), end='')
+                # Use regular expression to remove 'm' next to a number
+                line = re.sub(r'(\d)m', r'\1', line)
+                print(line, end='')
 
 import os
 import fileinput
