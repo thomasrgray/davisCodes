@@ -1,11 +1,13 @@
-#Automatically creates input file for BAT Reader Code
+#Automatically creates input file to store and read Brief Access Task (BAT) data
 import os
+
+#Example of file name 0702TG25_pre.ms8.txt
 
 # Function to extract information from the file name
 def extract_info(file_name):
     # Split the file name by underscore and period
     parts = file_name.split('_')
-    date = "2024/" + parts[0][:2] + "/" + parts[0][2:4]  # Extract date
+    date = "2024/" + parts[0][:2] + "/" + parts[0][2:4]  # Extract date (switch year if necessary)
     animal = parts[0][4:]  # Extract animal identifier
     condition, notes = "B" if "pre" in parts[1] else "A", "pre" if "pre" in parts[1] else "post"  # Extract condition and notes
     return animal, date, condition, notes
